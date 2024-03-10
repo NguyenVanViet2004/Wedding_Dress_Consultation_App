@@ -23,7 +23,8 @@ export const LoginStyles = StyleSheet.create({
     },
     loginForm:{
         flex: 2,
-        gap: SPACING.space_20
+        gap: SPACING.space_20,
+        marginBottom: SPACING.space_20
     },
     forgotPasswordLabel:{
         fontFamily: FONTFAMILY.Roboto_Light,
