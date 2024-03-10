@@ -11,7 +11,7 @@ import ChatDetails from '../screens/ChatDetails/ChatDetails';
 import EnterYourOTPCode from '../screens/EnterYourOTPCode/EnterYourOTPCode';
 import Favorites from '../screens/Favorites/Favorites';
 import ForgotPassword from '../screens/ForgotPassword/ForgotPassword';
-import Setting from '../screens/Setting/Setting';
+import Setting from '../screens/Account/Account';
 import SignIn from '../screens/SignIn/SignIn';
 import Splash from '../screens/Splash/Splash';
 import WeddingDressDetails from '../screens/WeddingDressDetails/WeddingDressDetails';
