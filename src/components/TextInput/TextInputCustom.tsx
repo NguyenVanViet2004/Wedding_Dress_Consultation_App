@@ -9,7 +9,7 @@ import React from 'react';
 import { COLORS, FONTFAMILY, FONTSIZE, SPACING } from '../../theme/Theme';
 import Icons from 'react-native-vector-icons/MaterialCommunityIcons';
 
-const TextInputCustom = ({ props, label, state, setErrorInput}: { props: any, label: string, state: boolean, setErrorInput: Function }) => {
+const TextInputCustom = ({ props, label, state, setErrorInput}: { props: any, label: string, state: any, setErrorInput: Function }) => {
   const [isPasswordVisible, setIsPasswordVisible] = React.useState(true);
   const [error, setError] = React.useState(false);
 

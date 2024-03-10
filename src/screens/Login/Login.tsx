@@ -1,4 +1,4 @@
-import { View, Text, SafeAreaView, Keyboard, ToastAndroid, TouchableOpacity, Image } from 'react-native'
+import { View, Text, SafeAreaView, TouchableOpacity, Image } from 'react-native'
 import React from 'react'
 import { LoginStyles as styles } from './Login.style'
 import ButtonCustom from '../../components/Button/ButtonCustom'
@@ -8,13 +8,13 @@ import { useNavigation } from '@react-navigation/native';
 
 const Login = () => {
   const navigation = useNavigation();
-  const [emailCheck, setEmailCheck] = React.useState(false);
-  const [passwordCheck, setPasswordCheck] = React.useState(false);
+  const [emailCheck, setEmailCheck] = React.useState(null);
+  const [passwordCheck, setPasswordCheck] = React.useState(null);
 
   const loginHandler = () => {
     console.log(emailCheck, passwordCheck);
 
-    if (!emailCheck && !passwordCheck) {
+    if (!emailCheck && emailCheck != null && !passwordCheck && passwordCheck != null) {
       navigation.reset({
         index: 0,
         routes: [
