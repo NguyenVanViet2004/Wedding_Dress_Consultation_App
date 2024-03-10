@@ -13,21 +13,27 @@ const Login = () => {
   const [passwordCheck, setPasswordCheck] = React.useState<any>();
 
   const loginHandler = () => {
-    console.log(emailCheck, passwordCheck);
+    // if (!emailCheck && emailCheck != undefined && !passwordCheck && passwordCheck != undefined) {
+    //   navigation.reset({
+    //     index: 0,
+    //     routes: [
+    //       { name: 'BottomTabs' as never },
+    //     ],
+    //   }
+    //   );
+    // } else {
+    //   setEmailCheck(true);
+    //   setPasswordCheck(true);
+    //   Toast.show('This is a long toast.', Toast.LONG);
+    // }
 
-    if (!emailCheck && emailCheck != undefined && !passwordCheck && passwordCheck != undefined) {
-      navigation.reset({
-        index: 0,
-        routes: [
-          { name: 'BottomTabs' as never },
-        ],
-      }
-      );
-    } else {
-      setEmailCheck(true);
-      setPasswordCheck(true);
-      Toast.show('This is a long toast.', Toast.LONG);
+    navigation.reset({
+      index: 0,
+      routes: [
+        { name: 'BottomTabs' as never },
+      ],
     }
+    );
   }
 
   return (

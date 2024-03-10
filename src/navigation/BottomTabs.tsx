@@ -5,7 +5,7 @@ import Bill from '../screens/Bill/Bill';
 import Chat from '../screens/Chat/Chat';
 import Favorites from '../screens/Favorites/Favorites';
 import Home from '../screens/Home/Home';
-import Setting from '../screens/Setting/Setting';
+import Setting from '../screens/Account/Account';
 import { COLORS } from '../theme/Theme';
 import Icon from 'react-native-vector-icons/MaterialCommunityIcons'
 import IconTeleGram from 'react-native-vector-icons/EvilIcons'
@@ -40,13 +40,13 @@ const BottomTabs = () => {
         tabBarIcon: ({ color, size }) => iconTab('heart', size),
       }} />
       <Tab.Screen name="Chat" component={Chat} options={{
-        tabBarIcon: ({ color, size }) => <Image source={require('../assets/images/telegramIcon.png')} />,
+        tabBarIcon: ({ color, size }) => <Image source={require('../assets/images/telegramIcon.png')} style={{width: 24, height: 24}} />,
       }} />
 
       <Tab.Screen name="Bill" component={Bill} options={{
-        tabBarIcon: ({ color, size }) => <Image source={require('../assets/images/Bill.png')} />,
+        tabBarIcon: ({ color, size }) => <Image source={require('../assets/images/Bill.png')} style={{width: 24, height: 24}} />,
       }} />
-      <Tab.Screen name="Setting" component={Setting} options={{
+      <Tab.Screen name="Account" component={Setting} options={{
         tabBarIcon: ({ color, size }) => iconTab('account-circle', size)
       }} />
     </Tab.Navigator>
