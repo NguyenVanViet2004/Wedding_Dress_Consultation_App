@@ -1,6 +1,9 @@
-import { FlatList, Image, StyleSheet, Text, TouchableOpacity, View } from 'react-native'
+import { Dimensions, FlatList, Image, StyleSheet, Text, TouchableOpacity, View } from 'react-native'
 import React from 'react'
 import { SPACING, COLORS, BORDERRADIUS, FONTSIZE, FONTFAMILY } from '../../theme/Theme'
+
+
+const {width, height} = Dimensions.get('window');
 
 const TopSale = ({ data }: { data: { id: string, name: string, image: number, price: string }[] }) => {
 
@@ -36,10 +39,10 @@ const styles = StyleSheet.create({
         alignItems: 'center'
     },
     image: {
-        width: 120,
-        height: 150,
+        height: width * 1 / 3,
         borderRadius: BORDERRADIUS.radius_10,
         resizeMode: 'cover',
+        aspectRatio: 15 / 20,
     },
     name: {
         fontSize: FONTSIZE.size_14,

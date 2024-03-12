@@ -1,6 +1,8 @@
-import { FlatList, Image, StyleSheet, Text, TouchableOpacity, View } from 'react-native'
+import { Dimensions, FlatList, Image, StyleSheet, Text, TouchableOpacity, View } from 'react-native'
 import React from 'react'
 import { BORDERRADIUS, COLORS, FONTFAMILY, SPACING } from '../../theme/Theme'
+
+const {width, height} = Dimensions.get('window');
 
 const CategoryItem = ({data}: {data:  {id: string, name: string, image: number }[]}) => {
 
@@ -29,15 +31,11 @@ const styles = StyleSheet.create({
     borderWidth: 1,
     marginEnd: SPACING.space_15,
     borderColor: COLORS.Gray,
-    gap: SPACING.space_4,
-    shadowColor: COLORS.Gray,
-    shadowOffset: { width: 0, height: 5 },
   },
   image: {
-    width: 90,
-    height: 125,
-    resizeMode: 'cover',
-    borderRadius: BORDERRADIUS.radius_10
+    height: width * 1/3,
+    borderRadius: BORDERRADIUS.radius_10,
+    aspectRatio: 9 / 16,
   },
   name: {
     fontFamily: FONTFAMILY.Roboto_Light,
