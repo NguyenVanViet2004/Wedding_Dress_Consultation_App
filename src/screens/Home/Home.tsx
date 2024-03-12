@@ -134,7 +134,7 @@ const Home = () => {
       image: require('../../assets/images/temp/5.png'),
       price: "50.000.000",
     }
-      , {
+    , {
       id: "5",
       name: 'Category 5',
       image: require('../../assets/images/temp/7.png'),
@@ -146,7 +146,7 @@ const Home = () => {
 
   const autoSlide = () => {
     const nextIndex = (imageActive + 1) % listImages.length;
-    
+
     setImageActive(nextIndex);
     if (refFlatList != undefined && refFlatList != null) {
       refFlatList.scrollToIndex({
@@ -198,14 +198,12 @@ const Home = () => {
 
       <ScrollView style={styles.container} >
         {/* slide */}
-        <View>
+        <View style={styles.slideContainer} >
           <FlatList horizontal showsHorizontalScrollIndicator={false} pagingEnabled
             data={listImages}
             ref={ref => setRefFlatList(ref)}
             renderItem={({ item }) => (
-              <View style={styles.slide} >
-                <Image source={item} style={styles.slideImage} />
-              </View>
+              <Image source={item} style={styles.slideImage} />
             )} />
 
           <View style={styles.dotContainer} >
@@ -223,7 +221,7 @@ const Home = () => {
               <Text style={styles.viewALl} >View all</Text>
             </TouchableOpacity>
           </View>
-          <CategoryItem data={listCategories}/>
+          <CategoryItem data={listCategories} />
         </View>
 
         {/* Hot */}

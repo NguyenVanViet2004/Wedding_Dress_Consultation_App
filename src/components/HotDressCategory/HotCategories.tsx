@@ -1,6 +1,8 @@
-import { FlatList, Image, StyleSheet, Text, TouchableOpacity, View } from 'react-native'
+import { Dimensions, FlatList, Image, StyleSheet, Text, TouchableOpacity, View } from 'react-native'
 import React from 'react'
 import { SPACING, COLORS, BORDERRADIUS, FONTFAMILY } from '../../theme/Theme';
+
+const {width, height} = Dimensions.get('window');
 
 const HotCategories = ({ data }: { data: { id: string, name: string, image: number, price: string }[] }) => {
 
@@ -49,16 +51,18 @@ const styles = StyleSheet.create({
         backgroundColor: COLORS.White,
         borderRadius: BORDERRADIUS.radius_10,
         borderWidth: 1,
-        marginEnd: SPACING.space_10,
         borderColor: COLORS.Gray,
-        gap: SPACING.space_4,
         shadowColor: COLORS.Gray,
-        shadowOffset: { width: 0, height: 5 }
+        shadowOffset: { width: 0, height: 5 },
+        shadowOpacity: 0.5,
+        gap: SPACING.space_4,
+        marginBottom: SPACING.space_10
     },
     image: {
-        width: 145,
+        width: width * 1/2,
         resizeMode: 'cover',
-        borderRadius: BORDERRADIUS.radius_10
+        borderRadius: BORDERRADIUS.radius_10,
+        aspectRatio: 9 / 12,
     },
     name: {
         fontFamily: FONTFAMILY.Roboto_Bold,

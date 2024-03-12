@@ -37,63 +37,65 @@ const Login = () => {
   }
 
   return (
-    <SafeAreaView style={styles.container} >
+    <ScrollView contentContainerStyle={{flex: 1}} >
+      <SafeAreaView style={styles.container} >
 
-      <View style={styles.loginTitle} >
-        <Text style={styles.loginTitleText} >Chào mừng bạn</Text>
-        <Text style={styles.subLoginTitleText} >Đăng nhập để tiếp tục</Text>
-      </View>
-
-      <ScrollView>
-        {/* Login form */}
-        <KeyboardAvoidingView behavior={Platform.OS === 'ios' ? 'padding' : 'height'} style={styles.loginForm} >
-          <TextInputCustom props={{
-            placeholder: 'Email',
-            autoCapitalize: 'none',
-            autoCorrect: false,
-            keyboardType: 'email-address',
-            returnKeyType: 'next',
-            type: 'email', // bắt buộc phải có để validate kiểu dữ liệu 
-            errorMessage: 'Email không đúng định dạng', // bắt buộc phải có để hiển thị thông báo
-          }} label={'Email'}
-            state={emailCheck}
-            setErrorInput={setEmailCheck} />
-
-          <TextInputCustom props={{
-            placeholder: 'Password',
-            autoCapitalize: 'none',
-            autoCorrect: false,
-            returnKeyType: 'done',
-            secureTextEntry: true,
-            type: 'password', // bắt buộc phải có để validate kiểu dữ liệu 
-            errorMessage: 'Mật khẩu sai', // bắt buộc phải có để hiển thị thông báo
-          }} label={'Password'}
-            state={passwordCheck}
-            setErrorInput={setPasswordCheck} />
-
-          <View>
-            <Text style={styles.forgotPasswordLabel} >Quên mật khẩu?</Text>
-
-            <ButtonCustom props={{ label: 'Đăng nhập' }} onPress={loginHandler} />
-          </View>
-        </KeyboardAvoidingView>
-
-        {/* Option login form */}
-        <View style={styles.optionsLoginForm} >
-          <Text style={styles.optionsTitle} >-Hoặc-</Text>
-
-          <TouchableOpacity style={styles.optionsButton} >
-            <Image source={require('../../assets/images/googleIcon.png')} style={styles.iconButton} />
-            <Text style={styles.labelButton} >Đăng nhập với Google</Text>
-          </TouchableOpacity>
-
-          <TouchableOpacity style={styles.optionsButton} >
-            <Image source={require('../../assets/images/facebookIcon.png')} style={styles.iconButton} />
-            <Text style={styles.labelButton} >Đăng nhập với Facebook</Text>
-          </TouchableOpacity>
+        <View style={styles.loginTitle} >
+          <Text style={styles.loginTitleText} >Chào mừng bạn</Text>
+          <Text style={styles.subLoginTitleText} >Đăng nhập để tiếp tục</Text>
         </View>
-      </ScrollView>
-    </SafeAreaView>
+
+        <ScrollView>
+          {/* Login form */}
+          <KeyboardAvoidingView behavior={Platform.OS === 'ios' ? 'padding' : 'height'} style={styles.loginForm} >
+            <TextInputCustom props={{
+              placeholder: 'Email',
+              autoCapitalize: 'none',
+              autoCorrect: false,
+              keyboardType: 'email-address',
+              returnKeyType: 'next',
+              type: 'email', // bắt buộc phải có để validate kiểu dữ liệu 
+              errorMessage: 'Email không đúng định dạng', // bắt buộc phải có để hiển thị thông báo
+            }} label={'Email'}
+              state={emailCheck}
+              setErrorInput={setEmailCheck} />
+
+            <TextInputCustom props={{
+              placeholder: 'Password',
+              autoCapitalize: 'none',
+              autoCorrect: false,
+              returnKeyType: 'done',
+              secureTextEntry: true,
+              type: 'password', // bắt buộc phải có để validate kiểu dữ liệu 
+              errorMessage: 'Mật khẩu sai', // bắt buộc phải có để hiển thị thông báo
+            }} label={'Password'}
+              state={passwordCheck}
+              setErrorInput={setPasswordCheck} />
+
+            <View>
+              <Text style={styles.forgotPasswordLabel} >Quên mật khẩu?</Text>
+
+              <ButtonCustom props={{ label: 'Đăng nhập' }} onPress={loginHandler} />
+            </View>
+          </KeyboardAvoidingView>
+
+          {/* Option login form */}
+          <View style={styles.optionsLoginForm} >
+            <Text style={styles.optionsTitle} >-Hoặc-</Text>
+
+            <TouchableOpacity style={styles.optionsButton} >
+              <Image source={require('../../assets/images/googleIcon.png')} style={styles.iconButton} />
+              <Text style={styles.labelButton} >Đăng nhập với Google</Text>
+            </TouchableOpacity>
+
+            <TouchableOpacity style={styles.optionsButton} >
+              <Image source={require('../../assets/images/facebookIcon.png')} style={styles.iconButton} />
+              <Text style={styles.labelButton} >Đăng nhập với Facebook</Text>
+            </TouchableOpacity>
+          </View>
+        </ScrollView>
+      </SafeAreaView>
+    </ScrollView>
   )
 }
 
