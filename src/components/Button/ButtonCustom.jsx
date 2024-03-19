@@ -21,8 +21,8 @@ const styles = StyleSheet.create({
     },
     button:{
         borderRadius: BORDERRADIUS.radius_10,
-        paddingVertical: SPACING.space_15,
-        backgroundColor: COLORS.Tawny,
+        paddingVertical: SPACING.space_8,
+        backgroundColor: COLORS.Orange,
         marginHorizontal: SPACING.space_20
     },
 })

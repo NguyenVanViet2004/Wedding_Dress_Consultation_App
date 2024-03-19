@@ -9,22 +9,25 @@ export const LoginStyles = StyleSheet.create({
     loginTitle:{
         paddingHorizontal: SPACING.space_20,
         flex: 1,
-        justifyContent: 'center'
+        justifyContent: 'center',
+        marginTop: SPACING.space_20 * 4,
+        marginBottom: SPACING.space_20
     },
     loginTitleText:{
-        fontFamily: FONTFAMILY.Roboto_Bold,
+        fontFamily: FONTFAMILY.Roboto_Medium,
         fontSize: FONTSIZE.size_24,
         color: COLORS.Black
     },
     subLoginTitleText:{
-        fontFamily: FONTFAMILY.Roboto_Light,
-        fontSize: FONTSIZE.size_18,
+        fontFamily: FONTFAMILY.Roboto_Medium,
+        fontSize: FONTSIZE.size_16,
         color: COLORS.Gray
     },
     loginForm:{
         flex: 2,
         gap: SPACING.space_20,
-        marginBottom: SPACING.space_20
+        marginBottom: SPACING.space_20,
+        marginTop: SPACING.space_8
     },
     forgotPasswordLabel:{
         fontFamily: FONTFAMILY.Roboto_Light,
@@ -39,6 +42,7 @@ export const LoginStyles = StyleSheet.create({
         flex: 2,
         gap: SPACING.space_20,
         marginHorizontal: SPACING.space_20,
+        paddingBottom: SPACING.space_20 * 3
     },
     optionsTitle: {
         textAlign: 'center',
@@ -51,8 +55,9 @@ export const LoginStyles = StyleSheet.create({
         alignItems: 'center',
         borderRadius: BORDERRADIUS.radius_10,
         borderWidth: 1,
-        paddingVertical: SPACING.space_15,
-        position: 'relative'
+        paddingVertical: SPACING.space_10,
+        position: 'relative',
+        borderColor: COLORS.Gray,
     },
     iconButton:{
         position: 'absolute',
@@ -61,7 +66,7 @@ export const LoginStyles = StyleSheet.create({
     labelButton:{
         flex: 1,
         textAlign:'center',
-        fontFamily: FONTFAMILY.Roboto_Light,
+        fontFamily: FONTFAMILY.Roboto_Regular,
         fontSize: FONTSIZE.size_16,
         color: COLORS.Black
     },

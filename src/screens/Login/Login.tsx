@@ -40,12 +40,11 @@ const Login = () => {
     <ScrollView contentContainerStyle={{flex: 1}} >
       <SafeAreaView style={styles.container} >
 
+        <ScrollView>
         <View style={styles.loginTitle} >
           <Text style={styles.loginTitleText} >Chào mừng bạn</Text>
           <Text style={styles.subLoginTitleText} >Đăng nhập để tiếp tục</Text>
         </View>
-
-        <ScrollView>
           {/* Login form */}
           <KeyboardAvoidingView behavior={Platform.OS === 'ios' ? 'padding' : 'height'} style={styles.loginForm} >
             <TextInputCustom props={{
@@ -81,7 +80,7 @@ const Login = () => {
 
           {/* Option login form */}
           <View style={styles.optionsLoginForm} >
-            <Text style={styles.optionsTitle} >-Hoặc-</Text>
+            <Text style={styles.optionsTitle} >- Hoặc -</Text>
 
             <TouchableOpacity style={styles.optionsButton} >
               <Image source={require('../../assets/images/googleIcon.png')} style={styles.iconButton} />
