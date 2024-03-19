@@ -37,16 +37,16 @@ const Login = () => {
   }
 
   return (
-    <ScrollView contentContainerStyle={{flex: 1}} >
+    <ScrollView contentContainerStyle={{ flex: 1 }} >
       <SafeAreaView style={styles.container} >
 
-        <ScrollView>
-        <View style={styles.loginTitle} >
-          <Text style={styles.loginTitleText} >Chào mừng bạn</Text>
-          <Text style={styles.subLoginTitleText} >Đăng nhập để tiếp tục</Text>
-        </View>
+        <ScrollView contentContainerStyle={{ flex: 1, position: 'relative' }} >
+          <View style={styles.loginTitle} >
+            <Text style={styles.loginTitleText} >Chào mừng bạn</Text>
+            <Text style={styles.subLoginTitleText} >Đăng nhập để tiếp tục</Text>
+          </View>
           {/* Login form */}
-          <KeyboardAvoidingView behavior={Platform.OS === 'ios' ? 'padding' : 'height'} style={styles.loginForm} >
+          <View style={styles.loginForm} >
             <TextInputCustom props={{
               placeholder: 'Email',
               autoCapitalize: 'none',
@@ -76,7 +76,7 @@ const Login = () => {
 
               <ButtonCustom props={{ label: 'Đăng nhập' }} onPress={loginHandler} />
             </View>
-          </KeyboardAvoidingView>
+          </View>
 
           {/* Option login form */}
           <View style={styles.optionsLoginForm} >
@@ -91,6 +91,10 @@ const Login = () => {
               <Image source={require('../../assets/images/facebookIcon.png')} style={styles.iconButton} />
               <Text style={styles.labelButton} >Đăng nhập với Facebook</Text>
             </TouchableOpacity>
+          </View>
+
+          <View style={styles.footerContainer} >
+            <Text style={styles.footerTitle} >Bạn chưa có tài khoản? <TouchableOpacity style={styles.footerButton} ><Text style={styles.footerButtonText} > Đăng ký</Text></TouchableOpacity></Text>
           </View>
         </ScrollView>
       </SafeAreaView>

@@ -16,7 +16,7 @@ const CategoryItem = ({data}: {data:  {id: string, name: string, image: number }
   }
 
   return (
-    <FlatList data={data} horizontal showsHorizontalScrollIndicator={false}
+    <FlatList data={data} horizontal showsHorizontalScrollIndicator={false} scrollEnabled={true}
       renderItem={({ item }) => renderItem(item)} />
   )
 }

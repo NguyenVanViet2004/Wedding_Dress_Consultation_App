@@ -2,7 +2,7 @@ import { Dimensions, FlatList, Image, StyleSheet, Text, TouchableOpacity, View }
 import React from 'react'
 import { SPACING, COLORS, BORDERRADIUS, FONTFAMILY } from '../../theme/Theme';
 
-const {width, height} = Dimensions.get('window');
+const { width, height } = Dimensions.get('window');
 
 const HotCategories = ({ data }: { data: { id: string, name: string, image: number, price: string }[] }) => {
 
@@ -29,15 +29,15 @@ const HotCategories = ({ data }: { data: { id: string, name: string, image: numb
                     <Image source={item[1].image} style={styles.image} />
                     <Text style={styles.name}>{item[1].name}</Text>
                     <Text style={styles.name}>{item[1].price}Đ</Text>
-                </TouchableOpacity>}
+                </TouchableOpacity> || <View style={styles.viewEmpty} />}
             </View>
         );
     }
 
     return (
         <FlatList
-            horizontal
-            showsHorizontalScrollIndicator={false}
+            showsVerticalScrollIndicator={false}
+            scrollEnabled={false}
             data={pairs}
             renderItem={({ item, index }) => renderRow(item)} />
     )
@@ -56,10 +56,13 @@ const styles = StyleSheet.create({
         shadowOffset: { width: 0, height: 5 },
         shadowOpacity: 0.5,
         gap: SPACING.space_4,
-        marginBottom: SPACING.space_10
+        marginBottom: SPACING.space_20,
+        alignItems: 'center',
+        justifyContent: 'center',
+        flex: 1,
     },
     image: {
-        width: width * 1/2,
+        width: width * 1 / 2,
         resizeMode: 'cover',
         borderRadius: BORDERRADIUS.radius_10,
         aspectRatio: 9 / 12,
@@ -71,6 +74,16 @@ const styles = StyleSheet.create({
     },
     rowBlock: {
         gap: SPACING.space_20,
-        marginEnd: SPACING.space_20
+        flexDirection: 'row',
+    },
+    viewEmpty: {
+        padding: SPACING.space_15,
+        backgroundColor: COLORS.White,
+        borderRadius: BORDERRADIUS.radius_10,
+        gap: SPACING.space_4,
+        marginBottom: SPACING.space_20,
+        alignItems: 'center',
+        justifyContent: 'center',
+        flex: 1,
     },
 })
