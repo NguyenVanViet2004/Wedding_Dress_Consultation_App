@@ -3,11 +3,10 @@ import { BORDERRADIUS, COLORS, FONTFAMILY, FONTSIZE, SPACING } from "../../theme
 
 export const SettingStyles = StyleSheet.create({
     container:{
-        flex: 1,
-        backgroundColor: 'FFF'
-        
+        height: '100%'
+       
     },
-    bgbAvt:{
+    header:{
         height: SPACING.space_32 * 6.6,
         backgroundColor: COLORS.LightOrange,
     
@@ -26,9 +25,9 @@ export const SettingStyles = StyleSheet.create({
     textAvt:{
         fontSize:FONTSIZE.size_20 + 2,
         color: COLORS.White,
-        fontFamily: FONTFAMILY.Roboto_Bold,
+        fontFamily: FONTFAMILY.Roboto_Medium,
     },
-    box:{
+    headerBox:{
         alignItems: "center"
     },
     menu:{
@@ -36,7 +35,7 @@ export const SettingStyles = StyleSheet.create({
         height: SPACING.space_32 * 2.1,
         backgroundColor: COLORS.White,
         marginTop: SPACING.space_2 - 37,
-        borderRadius: BORDERRADIUS.radius_4+1,
+        borderRadius: BORDERRADIUS.radius_10,
         shadowColor: COLORS.Black,
         elevation: SPACING.space_4+1,
         justifyContent: "center",
@@ -44,19 +43,81 @@ export const SettingStyles = StyleSheet.create({
         flexDirection: "row",
         gap: SPACING.space_16* 3.5
     },
-    boxItem:{
+    menuItem:{
         alignItems: "center",
         gap: SPACING.space_2 + 1
     },
-    iconmyorder:{
+    iconMyOrder:{
         width: SPACING.space_32 + 3, 
         height:SPACING.space_32 
     },
-    textTitle:{
+    menuTitle:{
         color:'#DBA668',
-        fontFamily: FONTFAMILY.Roboto_Bold,
+        fontFamily: FONTFAMILY.Roboto_Medium,
         fontSize: FONTSIZE.size_14
+    },
+    body:{
+       
+    },
+    bodyTitle:{
+        color: COLORS.Black,
+        fontFamily: FONTFAMILY.Roboto_Medium,
+        fontSize: FONTSIZE.size_16,
+        paddingLeft: SPACING.space_24*2,
+        marginVertical: SPACING.space_10
+    },
+    bodyBox:{
+        alignItems: "center",
+    },
+    bodyitem:{
+        width: '90%',
+        backgroundColor:COLORS.White,
+       
+        paddingBottom: SPACING.space_10,
+        borderRadius: BORDERRADIUS.radius_10 + 2,
+        shadowColor: COLORS.Black,
+        elevation: SPACING.space_4+1,
+    },
+    item:{
+        flexDirection: "row",
+        alignItems:"center",
+        paddingHorizontal: SPACING.space_20,
+        marginTop: SPACING.space_10
+        
+    },
+    itemTitle:{
+        color: COLORS.Black,
+        fontFamily: FONTFAMILY.Roboto_Regular,
+        fontSize: FONTSIZE.size_18,
+        marginLeft: SPACING.space_20
+        
+    },
+
+
+    footer:{
+        alignItems: "center",
+        marginTop: SPACING.space_24
+    },
+
+    footerBox:{
+        width: '90%',
+        height: SPACING.space_32 + SPACING.space_10,
+        backgroundColor: COLORS.White,
+        borderRadius: BORDERRADIUS.radius_10,
+        borderWidth: SPACING.space_2,
+        borderColor: COLORS.LightOrange,
+        justifyContent: "center",
+        alignItems: "center"
+
+    },
+    footerTitle:{
+        fontFamily: FONTFAMILY.Roboto_Regular,
+        fontSize: FONTSIZE.size_16,
+        color: COLORS.Black,
+    
     }
+
+    
 
     
 });
