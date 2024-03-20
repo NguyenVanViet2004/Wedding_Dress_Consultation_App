@@ -20,6 +20,7 @@ const TopSale = ({ data }: { data: { id: string, name: string, image: number, pr
     return (
         <FlatList
             horizontal
+            scrollEnabled={true}
             showsHorizontalScrollIndicator={false}
             data={data}
             renderItem={({ item, index }) => renderItem(item)} />

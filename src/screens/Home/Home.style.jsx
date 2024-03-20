@@ -87,6 +87,7 @@ export const HomeStyles = StyleSheet.create({
   hotContainer: {
     marginTop: SPACING.space_20,
     gap: SPACING.space_10,
+    height: height * 0.6,
   },
   topSaleContainer: {
     marginTop: SPACING.space_20,

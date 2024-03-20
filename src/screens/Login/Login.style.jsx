@@ -1,33 +1,49 @@
-import { StyleSheet } from "react-native";
+import { Platform, StyleSheet } from "react-native";
 import { BORDERRADIUS, COLORS, FONTFAMILY, FONTSIZE, SPACING } from "../../theme/Theme";
 
 export const LoginStyles = StyleSheet.create({
     container:{
         flex: 1,
         backgroundColor: COLORS.White,
+        position: 'relative',
     },
     loginTitle:{
         paddingHorizontal: SPACING.space_20,
-        flex: 1,
         justifyContent: 'center',
         marginTop: SPACING.space_20 * 4,
-        marginBottom: SPACING.space_20
+        marginBottom: SPACING.space_20,
     },
     loginTitleText:{
         fontFamily: FONTFAMILY.Roboto_Medium,
         fontSize: FONTSIZE.size_24,
-        color: COLORS.Black
+        color: COLORS.Black,
+        ...Platform.select({
+            ios:{
+                fontSize: FONTSIZE.size_30,
+            },
+        })
     },
     subLoginTitleText:{
         fontFamily: FONTFAMILY.Roboto_Medium,
         fontSize: FONTSIZE.size_16,
-        color: COLORS.Gray
+        color: COLORS.Gray,
+        ...Platform.select({
+            ios:{
+                fontSize: FONTSIZE.size_18,
+            },
+        })
     },
     loginForm:{
-        flex: 2,
+        flex: 1,
         gap: SPACING.space_20,
         marginBottom: SPACING.space_20,
-        marginTop: SPACING.space_8
+        marginHorizontal: SPACING.space_20,
+        marginTop: SPACING.space_8,
+        ...Platform.select({
+            ios:{
+                marginTop: SPACING.space_32
+            },
+        })
     },
     forgotPasswordLabel:{
         fontFamily: FONTFAMILY.Roboto_Light,
@@ -39,10 +55,10 @@ export const LoginStyles = StyleSheet.create({
         marginVertical: SPACING.space_28
     },
     optionsLoginForm:{
-        flex: 2,
+        flex: 1,
         gap: SPACING.space_20,
         marginHorizontal: SPACING.space_20,
-        paddingBottom: SPACING.space_20 * 3
+        paddingBottom: SPACING.space_20 
     },
     optionsTitle: {
         textAlign: 'center',
@@ -58,6 +74,11 @@ export const LoginStyles = StyleSheet.create({
         paddingVertical: SPACING.space_10,
         position: 'relative',
         borderColor: COLORS.Gray,
+        ...Platform.select({
+            ios:{
+                paddingVertical: SPACING.space_15
+            }
+        })
     },
     iconButton:{
         position: 'absolute',
@@ -69,5 +90,26 @@ export const LoginStyles = StyleSheet.create({
         fontFamily: FONTFAMILY.Roboto_Regular,
         fontSize: FONTSIZE.size_16,
         color: COLORS.Black
+    },
+    footerTitle: {
+        textAlign: 'center',
+        fontFamily: FONTFAMILY.Roboto_Light,
+        fontSize: FONTSIZE.size_16,
+        color: COLORS.Black,
+    },
+    footerButton:{
+        alignItems: 'center',
+        justifyContent: 'center',
+    },
+    footerButtonText:{
+        fontFamily: FONTFAMILY.Roboto_Bold,
+        textAlign: 'center',
+        color: COLORS.Black,
+    },
+    footerContainer: {
+        alignItems: 'center',
+        justifyContent: 'center',
+        flexDirection: 'row',
+        marginBottom: SPACING.space_10
     },
 });

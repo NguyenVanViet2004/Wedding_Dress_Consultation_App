@@ -30,7 +30,7 @@ const styles = StyleSheet.create({
         position: 'relative',
         flexDirection: 'row',
         gap: SPACING.space_10,
-        paddingHorizontal: SPACING.space_4,
+        paddingHorizontal: SPACING.space_10,
         borderColor: COLORS.Gray,
         alignItems: 'center',
         ...Platform.select({

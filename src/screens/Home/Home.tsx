@@ -66,48 +66,6 @@ const Home = () => {
       image: require('../../assets/images/temp/8.png'),
       price: "50.000.000"
     },
-    {
-      id: "5",
-      name: 'Category 5',
-      image: require('../../assets/images/temp/5.png'),
-      price: "50.000.000"
-    },
-    {
-      id: "6",
-      name: 'Category 6',
-      image: require('../../assets/images/temp/6.png'),
-      price: "50.000.000"
-    },
-    {
-      id: "7",
-      name: 'Category 7',
-      image: require('../../assets/images/temp/8.png'),
-      price: "50.000.000"
-    },
-    {
-      id: "8",
-      name: 'Category 8',
-      image: require('../../assets/images/temp/7.png'),
-      price: "50.000.000"
-    },
-    {
-      id: "9",
-      name: 'Category 9',
-      image: require('../../assets/images/temp/6.png'),
-      price: "50.000.000"
-    },
-    {
-      id: "10",
-      name: 'Category 10',
-      image: require('../../assets/images/temp/5.png'),
-      price: "50.000.000"
-    },
-    {
-      id: "11",
-      name: 'Category 11',
-      image: require('../../assets/images/temp/5.png'),
-      price: "50.000.000"
-    },
   ];
   const listTopSale = [
     {
@@ -196,10 +154,10 @@ const Home = () => {
       </View>
 
 
-      <ScrollView style={styles.container} >
+      <ScrollView style={styles.container} showsVerticalScrollIndicator={false}>
         {/* slide */}
         <View style={styles.slideContainer} >
-          <FlatList horizontal showsHorizontalScrollIndicator={false} pagingEnabled
+          <FlatList horizontal showsHorizontalScrollIndicator={false} pagingEnabled scrollEnabled={true}
             data={listImages}
             ref={ref => setRefFlatList(ref)}
             renderItem={({ item }) => (
