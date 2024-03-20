@@ -1,12 +1,38 @@
 import { View, Text, ImageBackground, TouchableOpacity, Image, ScrollView } from 'react-native'
-import React from 'react'
+import React, { useState } from 'react'
 import { SettingStyles } from './Account.style'
 import Icon from 'react-native-vector-icons/MaterialCommunityIcons'
 import IconSetting from 'react-native-vector-icons/AntDesign'
 import Ionicons from 'react-native-vector-icons/Ionicons'
-import { COLORS, SPACING } from '../../theme/Theme'
+import { COLORS, FONTFAMILY, FONTSIZE, SPACING } from '../../theme/Theme'
+import { useNavigation } from '@react-navigation/native';
+import ModalCustom from '../../components/Modal/ModalCustom'
+import { CommonActions } from '@react-navigation/native';
 
 const Setting = () => {
+  const navigation = useNavigation()
+
+  const btn_handerBill = () => {
+    navigation.navigate('Bill')
+  }
+  const btn_handerFavorite = () => {
+    navigation.navigate('Favorites')
+  }
+
+  const [modalVisible, setModalVisible] = useState(false);
+
+  const btn_handerLogout = () => {
+    navigation.dispatch(
+      CommonActions.reset({
+        index: 0,
+        routes: [{ name: 'Login' }],
+      })
+    );
+    setModalVisible(false)
+    
+  };
+
+
   return (
     <ScrollView>
 
@@ -31,13 +57,13 @@ const Setting = () => {
         </View>
         <View style={SettingStyles.headerBox}>
           <View style={SettingStyles.menu}>
-            <TouchableOpacity style={SettingStyles.menuItem}>
+            <TouchableOpacity onPress={btn_handerBill} style={SettingStyles.menuItem}>
               <Image style={SettingStyles.iconMyOrder} source={require('../../assets/images/Bill.png')} />
               <Text style={SettingStyles.menuTitle}>My Order</Text>
             </TouchableOpacity>
-            <TouchableOpacity style={SettingStyles.menuItem}>
+            <TouchableOpacity onPress={btn_handerFavorite} style={SettingStyles.menuItem}>
               <Icon name='cards-heart' size={SPACING.space_32 + 4} color={"#DBA668"} />
-              <Text style={SettingStyles.menuTitle}>Favotire</Text>
+              <Text style={SettingStyles.menuTitle}>Favorites</Text>
             </TouchableOpacity>
             <TouchableOpacity style={SettingStyles.menuItem}>
               <Ionicons name='notifications' size={SPACING.space_32 + 4} color={"#DBA668"} />
@@ -127,16 +153,32 @@ const Setting = () => {
             </View>
           </View>
 
-      
+
         </View>
 
-        <View style ={SettingStyles.footer}>
-            <TouchableOpacity style ={SettingStyles.footerBox}>
-              <Text style ={SettingStyles.footerTitle}>Đăng Xuất</Text>
-            </TouchableOpacity>
+        <View style={SettingStyles.footer}>
+          <TouchableOpacity onPress={() => setModalVisible(true)} style={SettingStyles.footerBox}>
+            <Text style={SettingStyles.footerTitle}>Đăng Xuất</Text>
+          </TouchableOpacity>
         </View>
 
       </View>
+
+
+
+
+
+
+      {/* -----------------modal---------------------- */}
+
+      <ModalCustom
+        isVisible={modalVisible}
+        onCancel={() => setModalVisible(false)}
+        onSubmid={btn_handerLogout}
+      >
+        <Text style ={SettingStyles.modalTitle}>Đăng xuất</Text>
+        <Text style ={SettingStyles.modalDesc}>Bạn chắc chắn muốn đăng xuất</Text>
+      </ModalCustom>
 
     </ScrollView>
   )
