@@ -115,6 +115,17 @@ export const SettingStyles = StyleSheet.create({
         fontSize: FONTSIZE.size_16,
         color: COLORS.Black,
     
+    },
+    modalTitle:{
+        fontSize: FONTSIZE.size_18, 
+        color: COLORS.Black, 
+        fontFamily: FONTFAMILY.Roboto_Bold
+    },
+    modalDesc:{
+        fontSize: FONTSIZE.size_16, 
+        marginTop: SPACING.space_4, 
+        fontFamily: FONTFAMILY.Roboto_Regular, 
+        color: COLORS.Black
     }
 
     
