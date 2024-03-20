@@ -1,3 +1,4 @@
+/* eslint-disable prettier/prettier */
 import { View, Text, SafeAreaView, Image } from 'react-native'
 import React from 'react'
 import { SplashStyle as styles } from './Splash.style'

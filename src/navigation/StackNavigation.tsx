@@ -11,8 +11,8 @@ import ChatDetails from '../screens/ChatDetails/ChatDetails';
 import EnterYourOTPCode from '../screens/EnterYourOTPCode/EnterYourOTPCode';
 import Favorites from '../screens/Favorites/Favorites';
 import ForgotPassword from '../screens/ForgotPassword/ForgotPassword';
-import Setting from '../screens/Setting/Setting';
-import SignIn from '../screens/SignIn/SignIn';
+import Setting from '../screens/Account/Account';
+import SignUp from '../screens/SignUp/SignUp';
 import Splash from '../screens/Splash/Splash';
 import WeddingDressDetails from '../screens/WeddingDressDetails/WeddingDressDetails';
 import WeddingDressSearch from '../screens/WeddingDressSearch/WeddingDressSearch';
@@ -36,7 +36,7 @@ const StackNavigation = () => {
         <Stack.Screen name='Home' component={Home} />
         <Stack.Screen name="Login" component={Login} />
         <Stack.Screen name="Setting" component={Setting} />
-        <Stack.Screen name="SignIn" component={SignIn} />
+        <Stack.Screen name="SignUp" component={SignUp} />
         <Stack.Screen name="WeddingDressDetails" component={WeddingDressDetails} />
         <Stack.Screen name="WeddingDressFittingAppointment" component={WeddingDressFittingAppointment} />
         <Stack.Screen name="WeddingDressSearch" component={WeddingDressSearch} />
