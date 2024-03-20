@@ -50,7 +50,7 @@ export const COLORS: Color = {
     DarkOrange: '#FE7D06',
     VividOrange: '#FD6A00',
     Red: '#E53935',
-    Green: '#07FF02',
+    Green: '#027600',
     Orange: "#F9B15D"
 };
 

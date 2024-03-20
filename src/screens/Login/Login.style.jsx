@@ -5,10 +5,10 @@ export const LoginStyles = StyleSheet.create({
     container:{
         flex: 1,
         backgroundColor: COLORS.White,
+        position: 'relative',
     },
     loginTitle:{
         paddingHorizontal: SPACING.space_20,
-        flex: 1,
         justifyContent: 'center',
         marginTop: SPACING.space_20 * 4,
         marginBottom: SPACING.space_20,
@@ -34,9 +34,10 @@ export const LoginStyles = StyleSheet.create({
         })
     },
     loginForm:{
-        flex: 2,
+        flex: 1,
         gap: SPACING.space_20,
         marginBottom: SPACING.space_20,
+        marginHorizontal: SPACING.space_20,
         marginTop: SPACING.space_8,
         ...Platform.select({
             ios:{
@@ -54,10 +55,10 @@ export const LoginStyles = StyleSheet.create({
         marginVertical: SPACING.space_28
     },
     optionsLoginForm:{
-        flex: 2,
+        flex: 1,
         gap: SPACING.space_20,
         marginHorizontal: SPACING.space_20,
-        paddingBottom: SPACING.space_20 * 3
+        paddingBottom: SPACING.space_20 
     },
     optionsTitle: {
         textAlign: 'center',
@@ -102,11 +103,13 @@ export const LoginStyles = StyleSheet.create({
     },
     footerButtonText:{
         fontFamily: FONTFAMILY.Roboto_Bold,
-        textAlign: 'center'
+        textAlign: 'center',
+        color: COLORS.Black,
     },
     footerContainer: {
         alignItems: 'center',
         justifyContent: 'center',
+        flexDirection: 'row',
         marginBottom: SPACING.space_10
     },
 });

@@ -40,13 +40,17 @@ const TextInputCustom = ({ props, label, state, setErrorInput }: { props: any, l
       setErrorInput(!regexPassword.test(text));
     }
 
+    if (type === 'name') {
+      setErrorInput(text.length < 5);
+    }
+
   }
 
   if (props.secureTextEntry) {
     return (
       <View style={styles.inputContainer}>
         <Text style={styles.label}>{label}</Text>
-        <View style={styles.mainInput}>
+        <View style={[styles.mainInput, { borderBottomWidth: 1, borderColor: state ? COLORS.Red : COLORS.Gray  }]}>
           <TextInput
             {...props}
             secureTextEntry={isPasswordVisible}
@@ -72,14 +76,15 @@ const TextInputCustom = ({ props, label, state, setErrorInput }: { props: any, l
     <View style={styles.inputContainer}>
       <Text style={styles.label}>{label}</Text>
 
-      <TextInput
-        {...props}
-        onChangeText={value => onChangeTextHandler(value, props.type)}
-        style={[
-          styles.input,
-        ]}
-      />
-      <View style={{ flex: 1, height: 1, backgroundColor: state ? COLORS.Red : COLORS.Gray }}></View>
+      <View style={[styles.mainInput, { borderBottomWidth: 1, borderColor: state ? COLORS.Red : COLORS.Gray  }]}>
+        <TextInput
+          {...props}
+          onChangeText={value => onChangeTextHandler(value, props.type)}
+          style={[
+            styles.input,
+          ]}
+        />
+      </View>
 
       {/* show error message */}
       {state && <Text style={styles.errorMessage}>{props.errorMessage}</Text>}
@@ -117,7 +122,6 @@ const styles = StyleSheet.create({
     })
   },
   inputContainer: {
-    marginHorizontal: SPACING.space_20,
     justifyContent: 'center',
   },
   eyeIcon: {

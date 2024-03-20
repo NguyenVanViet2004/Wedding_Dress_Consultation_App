@@ -23,7 +23,6 @@ const styles = StyleSheet.create({
         borderRadius: BORDERRADIUS.radius_10,
         paddingVertical: SPACING.space_8,
         backgroundColor: COLORS.Orange,
-        marginHorizontal: SPACING.space_20,
         ...Platform.select({
           ios:{
             paddingVertical: SPACING.space_12
