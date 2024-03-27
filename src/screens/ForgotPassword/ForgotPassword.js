@@ -29,7 +29,7 @@ const ForgotPassword = () => {
           </View>
           <View style ={ForgotPasswordStyles.box2}>
             <Text style ={ForgotPasswordStyles.box1Title2}>Email</Text>
-            <TextInput style={ForgotPasswordStyles.customInput}/>
+            <TextInput placeholder='Nhập email' style={ForgotPasswordStyles.customInput}/>
           </View>
         </View>
 

@@ -23,7 +23,6 @@ const EnterYourOTPCode = () => {
   }
 
 
-
   return (
     <View style={EnterYourOTPCodeStyles.container}>
       <ScrollView>
