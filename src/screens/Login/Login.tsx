@@ -75,8 +75,8 @@ const Login = () => {
             setErrorInput={setPasswordCheck} />
 
           <View>
-            <Text style={styles.forgotPasswordLabel} >Quên mật khẩu?</Text>
-
+    
+            <TouchableOpacity onPress={() => navigation.navigate('ForgotPassword')}><Text style={styles.forgotPasswordLabel} >Quên mật khẩu?</Text></TouchableOpacity>
             <ButtonCustom props={{ label: 'Đăng nhập' }} onPress={loginHandler} />
           </View>
         </View>
