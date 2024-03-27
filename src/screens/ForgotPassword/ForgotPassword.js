@@ -2,14 +2,16 @@ import { View, Text, ScrollView, TouchableOpacity, TextInput } from 'react-nativ
 import React from 'react'
 import { ForgotPasswordStyles } from './ForgotPassword.style'
 import Icon from 'react-native-vector-icons/MaterialCommunityIcons'
-import IconSetting from 'react-native-vector-icons/AntDesign'
-import Ionicons from 'react-native-vector-icons/Ionicons'
 import { COLORS, SPACING } from '../../theme/Theme'
 import { useNavigation } from '@react-navigation/native';
 
 
 const ForgotPassword = () => {
   const navigation = useNavigation();
+
+  const handerXacNhan = () => {
+    navigation.navigate('EnterYourOTPCode')
+  }
 
   return (
     <View style ={ForgotPasswordStyles.container}>
@@ -31,7 +33,7 @@ const ForgotPassword = () => {
           </View>
         </View>
 
-        <TouchableOpacity style ={ForgotPasswordStyles.footer}>
+        <TouchableOpacity onPress={() => handerXacNhan()} style ={ForgotPasswordStyles.footer}>
           <Text style ={ForgotPasswordStyles.footerTitle}>Xác nhận</Text>
         </TouchableOpacity>
       </ScrollView>
