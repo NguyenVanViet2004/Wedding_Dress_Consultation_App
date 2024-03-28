@@ -1,3 +1,4 @@
+
 import { View, Text, FlatList, SafeAreaView, TouchableOpacity, Image } from 'react-native'
 import React from 'react'
 import { useNavigation } from '@react-navigation/native'
@@ -49,9 +50,7 @@ const Chat = () => {
           </View>
         }
       />
-      <MessengerItem data={dataMessenger}/>
+      <MessengerItem data={dataMessenger} />
     </SafeAreaView>
   )
 }
-
-export default Chat

@@ -47,7 +47,7 @@ export const COLORS: Color = {
     White: '#FFFFFF',
     Tawny: '#DBA668',
     Gray: '#818181',
-    LightOrange: '#E68E25',
+    LightOrange: '#F9B15D',
     DarkOrange: '#FE7D06',
     VividOrange: '#FD6A00',
     Red: '#E53935',

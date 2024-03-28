@@ -1,4 +1,5 @@
 import { StyleSheet } from "react-native";
+
 import { COLORS, FONTFAMILY, FONTSIZE, SPACING } from "../../theme/Theme";
 
 export const chatStyles = StyleSheet.create({
@@ -66,3 +67,5 @@ export const chatStyles = StyleSheet.create({
         color: COLORS.Gray,
     }
 });
+
+
