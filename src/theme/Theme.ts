@@ -39,6 +39,7 @@ interface Color {
     Red: string;
     Green: string;
     Orange: string;
+    Yellow: string;
 }
 
 export const COLORS: Color = {
@@ -51,7 +52,8 @@ export const COLORS: Color = {
     VividOrange: '#FD6A00',
     Red: '#E53935',
     Green: '#027600',
-    Orange: "#F9B15D"
+    Orange: "#F9B15D",
+    Yellow:"#FCDC2A",
 };
 
 interface FontFamily {
