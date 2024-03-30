@@ -6,7 +6,7 @@ import ChangePasswordAfterEnterOTP from '../screens/ChangePasswordAfterEnterOTP/
 import Login from '../screens/Login/Login';
 import WeddingDressFittingAppointment from '../screens/WeddingDressFittingAppointment/WeddingDressFittingAppointment';
 import Bill from '../screens/Bill/Bill';
-import Chat from '../screens/Chat/Chat';
+import Chat  from '../screens/Chat/Chat';
 import ChatDetails from '../screens/ChatDetails/ChatDetails';
 import EnterYourOTPCode from '../screens/EnterYourOTPCode/EnterYourOTPCode';
 import Favorites from '../screens/Favorites/Favorites';

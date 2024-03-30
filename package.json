@@ -15,6 +15,7 @@
     "@react-navigation/material-bottom-tabs": "^6.2.22",
     "@react-navigation/native-stack": "^6.9.20",
     "@react-navigation/stack": "^6.3.25",
+    "@rneui/themed": "^4.0.0-rc.8",
     "react": "18.2.0",
     "react-native": "0.73.6",
     "react-native-fs": "^2.20.0",
