@@ -21,7 +21,49 @@ const Chat = () => {
       name: "Chu Hải Nam",
       chat: "Váy này có size 45kg",
       time: "24/03/2024"
-    }
+    },
+    {
+      id: "2",
+      image: require('../../assets/images/image.png'),
+      name: "Chu Hải Nam",
+      chat: "Váy này có size 45kg",
+      time: "24/03/2024"
+    },
+    {
+      id: "3",
+      image: require('../../assets/images/image.png'),
+      name: "Chu Hải Nam",
+      chat: "Váy này có size 45kg",
+      time: "24/03/2024"
+    },
+    {
+      id: "4",
+      image: require('../../assets/images/image.png'),
+      name: "Chu Hải Nam",
+      chat: "Váy này có size 45kg",
+      time: "24/03/2024"
+    },
+    {
+      id: "5",
+      image: require('../../assets/images/image.png'),
+      name: "Chu Hải Nam",
+      chat: "Váy này có size 45kg",
+      time: "24/03/2024"
+    },
+    {
+      id: "6",
+      image: require('../../assets/images/image.png'),
+      name: "Chu Hải Nam",
+      chat: "Váy này có size 45kg",
+      time: "24/03/2024"
+    },
+    {
+      id: "7",
+      image: require('../../assets/images/image.png'),
+      name: "Chu Hải Nam",
+      chat: "Váy này có size 45kg",
+      time: "24/03/2024"
+    },
   ]
 
   return (
@@ -35,7 +77,7 @@ const Chat = () => {
         </TouchableOpacity>
       </View>
 
-      <FlatList
+      {/* <FlatList
         data={dataMessenger}
         renderItem={({ item }) =>
           <View style={styles.rowContent}>
@@ -49,8 +91,9 @@ const Chat = () => {
             </View>
           </View>
         }
-      />
+      /> */}
       <MessengerItem data={dataMessenger} />
     </SafeAreaView>
   )
 }
+export default Chat

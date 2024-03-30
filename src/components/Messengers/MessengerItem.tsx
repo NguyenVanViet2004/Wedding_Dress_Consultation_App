@@ -1,14 +1,20 @@
 import React from 'react'
-import { FlatList, Image, Text, TouchableOpacity } from 'react-native'
-
+import { FlatList, Image, Text, TouchableOpacity, View } from 'react-native'
+import { chatStyles as styles } from '../../screens/Chat/Chat.style'
 const MessengerItem = ({ data }: { data: { id: string, image: number, name: string, chat: string, time: string }[] }) => {
     const renderItem = (item: { id: string, image: number, name: string, chat: string, time: string }) => {
         return (
             <TouchableOpacity>
-                <Image source={item.image} />
-                <Text> {item.name}</Text>
-                <Text> {item.chat}</Text>
-                <Text> {item.time}</Text>
+                <View style={styles.rowContent}>
+                    <Image source={item.image} style={styles.image} />
+                    <View style={styles.messContent}>
+                        <Text style={styles.name}>{item.name}</Text>
+                        <Text style={styles.chat}>Bạn: {item.chat}</Text>
+                    </View>
+                    <View style={styles.columnContent}>
+                        <Text style={styles.time}>{item.time}</Text>
+                    </View>
+                </View>
             </TouchableOpacity>
         )
     }
