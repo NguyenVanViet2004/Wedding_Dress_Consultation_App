@@ -16,6 +16,7 @@ import SignUp from '../screens/SignUp/SignUp';
 import Splash from '../screens/Splash/Splash';
 import WeddingDressDetails from '../screens/WeddingDressDetails/WeddingDressDetails';
 import WeddingDressSearch from '../screens/WeddingDressSearch/WeddingDressSearch';
+import BillDetails from '../screens/BillDetails/BillDetails';
 import BottomTabs from './BottomTabs';
 
 const Stack = createStackNavigator();
@@ -25,6 +26,7 @@ const StackNavigation = () => {
     <Stack.Navigator screenOptions={{
         headerShown: false,
     }} >
+
         <Stack.Screen name='Splash' component={Splash} />
         <Stack.Screen name='Bill' component={Bill} />
         <Stack.Screen name="ChangePasswordAfterEnterOTP" component={ChangePasswordAfterEnterOTP} />
@@ -40,6 +42,8 @@ const StackNavigation = () => {
         <Stack.Screen name="WeddingDressDetails" component={WeddingDressDetails} />
         <Stack.Screen name="WeddingDressFittingAppointment" component={WeddingDressFittingAppointment} />
         <Stack.Screen name="WeddingDressSearch" component={WeddingDressSearch} />
+        <Stack.Screen name="BillDetails" component={BillDetails} />
+
         <Stack.Screen name="BottomTabs" component={BottomTabs} />
     </Stack.Navigator>
   )
