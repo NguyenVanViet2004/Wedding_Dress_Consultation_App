@@ -1,4 +1,4 @@
-import { View, Text, FlatList, Image, SafeAreaView, TouchableOpacity } from 'react-native'
+import { View, Text, FlatList, Image, SafeAreaView, TouchableOpacity  } from 'react-native'
 import React from 'react'
 import { favoritesStyles as styles } from './Favorites.style'
 import { COLORS, SPACING } from '../../theme/Theme';
