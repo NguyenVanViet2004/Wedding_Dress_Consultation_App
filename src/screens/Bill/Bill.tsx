@@ -8,6 +8,10 @@ import Icon from 'react-native-vector-icons/Fontisto';
 import Icons from 'react-native-vector-icons/MaterialCommunityIcons';
 import { Rating, AirbnbRating } from 'react-native-ratings';
 import ButtonCustom from '../../components/Button/ButtonCustom';
+import BookingSchedule from '../../components/Bill/BookingSchedule';
+import CancellationSchedule from '../../components/Bill/CancellationSchedule';
+import CompletionSchedule from '../../components/Bill/CompletionSchedule';
+import Evaluated from '../../components/Bill/Evaluated';
 interface MenuTab {
   name: string;
   background: string;
@@ -189,252 +193,24 @@ const Bill = () => {
         />
       </View>
 
-      <View style={{ flex: 1 }} >
+      <View style={{ flex: 1  }} >
           {
             menuTabs[tabIndexActive].name === "Lịch Đặt" ? (
               <View style={{ backgroundColor: COLORS.White, flex: 1, alignItems: 'center', justifyContent: 'center' }}  >
-                <FlatList
-        data={dataFavorites}
-        renderItem={({ item }) =>
-          <View style={styles.listFavorites}>
-            <Image source={{ uri: "https://i.pinimg.com/236x/8d/ba/dc/8dbadcb85fce548136bad7a0a7000610.jpg" }} style={styles.image} />
-            <View style={styles.content}>
-              <Text style={styles.nameDress}>{item.name}</Text>
-              <View style={styles.rowContent}>
-                <Text style={styles.text}>Đánh giá: </Text>
-                {/* <AirbnbRating
-                  count={5}
-                  reviews={["Bad", "OK", "Good", "Very Good", "Amazing"]}
-                  defaultRating={5}
-                  size={10}
-                /> */}
-                <Rating
-                  // showRating
-                  imageSize={10}
-                  onFinishRating={ratingCompleted}
-                  style={{ marginTop: 4 }}
-                />
-                <Text style={styles.text}>{item.vote}</Text>
-              </View>
-              <Text style={styles.text}>Lượt thuê: {item.rentalQuantity}</Text>
-              <View style={styles.rowContent}>
-                <Text style={styles.listedPriceDress}>{item.listedPrice} </Text>
-                <Icon name='flash' size={SPACING.space_15} color={COLORS.Yellow} />
-                <Text style={styles.percentDress}> {item.percent}</Text>
-              </View>
-              <Text style={styles.discountDress}>{item.discount}</Text>
-
-            </View>
-            <View style={styles.leftContent}>
-              {/* <Icons
-                size={30}
-                name={iconName}
-                onPress={() => onToggleFavorite()}
-                style={{ color: COLORS.Red }}
-              /> */}
-              <Text style={{color : COLORS.LightOrange , fontSize: FONTSIZE.size_12 , marginTop : 60 }}>Xem chi tiết {'>>'}</Text>
-            
-            </View>
-           
-          </View>
-        } />
+               <BookingSchedule/>
               </View>
             ) : menuTabs[tabIndexActive].name === "Lịch hủy" ? (
               <View style={{ backgroundColor: COLORS.White, flex: 1, alignItems: 'center', justifyContent: 'center' }}  >
-                <FlatList
-        data={dataFavorites}
-        renderItem={({ item }) =>
-          <View style={styles.listFavorites}>
-            <Image source={{ uri: "https://i.pinimg.com/236x/8d/ba/dc/8dbadcb85fce548136bad7a0a7000610.jpg" }} style={styles.image} />
-            <View style={styles.content}>
-              <Text style={styles.nameDress}>{item.name}</Text>
-              <View style={styles.rowContent}>
-                <Text style={styles.text}>Đánh giá: </Text>
-                {/* <AirbnbRating
-                  count={5}
-                  reviews={["Bad", "OK", "Good", "Very Good", "Amazing"]}
-                  defaultRating={5}
-                  size={10}
-                /> */}
-                <Rating
-                  // showRating
-                  imageSize={10}
-                  onFinishRating={ratingCompleted}
-                  style={{ marginTop: 4 }}
-                />
-                <Text style={styles.text}>{item.vote}</Text>
-              </View>
-              <Text style={styles.text}>Lượt thuê: {item.rentalQuantity}</Text>
-              <View style={styles.rowContent}>
-                <Text style={styles.listedPriceDress}>{item.listedPrice} </Text>
-                <Icon name='flash' size={SPACING.space_15} color={COLORS.Yellow} />
-                <Text style={styles.percentDress}> {item.percent}</Text>
-              </View>
-              <Text style={styles.discountDress}>{item.discount}</Text>
-
-            </View>
-            <View style={styles.leftContent}>
-              {/* <Icons
-                size={30}
-                name={iconName}
-                onPress={() => onToggleFavorite()}
-                style={{ color: COLORS.Red }}
-              /> */}
-              {/* <Text style={{color : COLORS.LightOrange , fontSize: FONTSIZE.size_12 , marginTop : 60 }}>Xem chi tiết {'>>'}</Text> */}
-            
-              <TouchableOpacity style={{borderRadius: BORDERRADIUS.radius_10,
-        paddingVertical: SPACING.space_8,
-        paddingHorizontal: SPACING.space_10,
-        backgroundColor: COLORS.Orange,
-        marginTop : 60,
-        marginLeft : 20 ,
-        ...Platform.select({
-          ios:{
-            paddingVertical: SPACING.space_12
-          },
-        })}} onPress={undefined} >
-        <Text style={{fontFamily: FONTFAMILY.Roboto_Bold,
-        fontSize: FONTSIZE.size_12,
-        color: COLORS.White,
-        alignSelf: 'center'}} >Đặt lịch lại </Text>
-    </TouchableOpacity>
-            </View>
-            
-          </View>
-        } />
+                <CancellationSchedule/>
               </View>
             ) : menuTabs[tabIndexActive].name === "Hoàn thành" ? (
               <View style={{ backgroundColor: COLORS.White, flex: 1, alignItems: 'center', justifyContent: 'center' }}  >
                 
-                
-                
-                
-                <FlatList
-        data={dataFavorites}
-        renderItem={({ item }) =>
-          <View style={styles.listFavorites}>
-            <Image source={{ uri: "https://i.pinimg.com/236x/8d/ba/dc/8dbadcb85fce548136bad7a0a7000610.jpg" }} style={styles.image} />
-            <View style={styles.content}>
-              <Text style={styles.nameDress}>{item.name}</Text>
-              <View style={styles.rowContent}>
-                <Text style={styles.text}>Đánh giá: </Text>
-                {/* <AirbnbRating
-                  count={5}
-                  reviews={["Bad", "OK", "Good", "Very Good", "Amazing"]}
-                  defaultRating={5}
-                  size={10}
-                /> */}
-                <Rating
-                  // showRating
-                  imageSize={10}
-                  onFinishRating={ratingCompleted}
-                  style={{ marginTop: 4 }}
-                />
-                <Text style={styles.text}>{item.vote}</Text>
-              </View>
-              <Text style={styles.text}>Lượt thuê: {item.rentalQuantity}</Text>
-              <View style={styles.rowContent}>
-                <Text style={styles.listedPriceDress}>{item.listedPrice} </Text>
-                <Icon name='flash' size={SPACING.space_15} color={COLORS.Yellow} />
-                <Text style={styles.percentDress}> {item.percent}</Text>
-              </View>
-              <Text style={styles.discountDress}>{item.discount}</Text>
-
-            </View>
-            <View style={styles.leftContent}>
-              {/* <Icons
-                size={30}
-                name={iconName}
-                onPress={() => onToggleFavorite()}
-                style={{ color: COLORS.Red }}
-              /> */}
-              {/* <Text style={{color : COLORS.LightOrange , fontSize: FONTSIZE.size_12 , marginTop : 60 }}>Xem chi tiết {'>>'}</Text> */}
-            
-              <TouchableOpacity style={{borderRadius: BORDERRADIUS.radius_10,
-        paddingVertical: SPACING.space_8,
-        paddingHorizontal: SPACING.space_10,
-        backgroundColor: COLORS.Orange,
-        marginTop : 60,
-        marginLeft : 20 ,
-        ...Platform.select({
-          ios:{
-            paddingVertical: SPACING.space_12
-          },
-        })}} onPress={undefined} >
-        <Text style={{fontFamily: FONTFAMILY.Roboto_Bold,
-        fontSize: FONTSIZE.size_12,
-        color: COLORS.White,
-        alignSelf: 'center'}} >Đánh giá  </Text>
-    </TouchableOpacity>
-            </View>
-            
-          </View>
-        } />
+               <CompletionSchedule/>
               </View>
             ) : menuTabs[tabIndexActive].name === "Đã Đánh giá" ? (
               <View style={{ backgroundColor: COLORS.White, flex: 1, alignItems: 'center', justifyContent: 'center' }}  >
-                <FlatList
-        data={dataFavorites}
-        renderItem={({ item }) =>
-          <View style={styles.listFavorites}>
-            <Image source={{ uri: "https://i.pinimg.com/236x/8d/ba/dc/8dbadcb85fce548136bad7a0a7000610.jpg" }} style={styles.image} />
-            <View style={styles.content}>
-              <Text style={styles.nameDress}>{item.name}</Text>
-              <View style={styles.rowContent}>
-                <Text style={styles.text}>Đánh giá: </Text>
-                {/* <AirbnbRating
-                  count={5}
-                  reviews={["Bad", "OK", "Good", "Very Good", "Amazing"]}
-                  defaultRating={5}
-                  size={10}
-                /> */}
-                <Rating
-                  // showRating
-                  imageSize={10}
-                  onFinishRating={ratingCompleted}
-                  style={{ marginTop: 4 }}
-                />
-                <Text style={styles.text}>{item.vote}</Text>
-              </View>
-              <Text style={styles.text}>Lượt thuê: {item.rentalQuantity}</Text>
-              <View style={styles.rowContent}>
-                <Text style={styles.listedPriceDress}>{item.listedPrice} </Text>
-                <Icon name='flash' size={SPACING.space_15} color={COLORS.Yellow} />
-                <Text style={styles.percentDress}> {item.percent}</Text>
-              </View>
-              <Text style={styles.discountDress}>{item.discount}</Text>
-
-            </View>
-            <View style={styles.leftContent}>
-              {/* <Icons
-                size={30}
-                name={iconName}
-                onPress={() => onToggleFavorite()}
-                
-                style={{ color: COLORS.Red }}
-              /> */}
-              {/* <Text style={{color : COLORS.LightOrange , fontSize: FONTSIZE.size_12 , marginTop : 60 }}>Xem chi tiết {'>>'}</Text> */}
-            
-              <TouchableOpacity style={{borderRadius: BORDERRADIUS.radius_10,
-        paddingVertical: SPACING.space_8,
-        paddingHorizontal: SPACING.space_10,
-        backgroundColor: COLORS.Orange,
-        marginTop : 60,
-        marginLeft : 20 ,
-        ...Platform.select({
-          ios:{
-            paddingVertical: SPACING.space_12
-          },
-        })}} onPress={undefined} >
-        <Text style={{fontFamily: FONTFAMILY.Roboto_Bold,
-        fontSize: FONTSIZE.size_12,
-        color: COLORS.White,
-        alignSelf: 'center'}} >Chỉnh sửa </Text>
-    </TouchableOpacity>
-            </View>
-            
-          </View>
-        } />
+               <Evaluated/>
               </View>
             ) : null
           }
