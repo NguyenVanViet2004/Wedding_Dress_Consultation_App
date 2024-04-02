@@ -1,8 +1,17 @@
 import React from 'react';
-import { View, Text, SafeAreaView, FlatList, TouchableOpacity } from 'react-native';
+import { View, Text, SafeAreaView, FlatList, TouchableOpacity, Image, Platform } from 'react-native';
 import Search from '../../components/Search/Search';
-import { COLORS, FONTFAMILY, SPACING } from '../../theme/Theme';
-
+import { BORDERRADIUS, COLORS, FONTFAMILY, FONTSIZE, SPACING } from '../../theme/Theme';
+import Favorites from '../Favorites/Favorites';
+import { favoritesStyles as styles } from '../Favorites/Favorites.style'
+import Icon from 'react-native-vector-icons/Fontisto';
+import Icons from 'react-native-vector-icons/MaterialCommunityIcons';
+import { Rating, AirbnbRating } from 'react-native-ratings';
+import ButtonCustom from '../../components/Button/ButtonCustom';
+import BookingSchedule from '../../components/Bill/BookingSchedule';
+import CancellationSchedule from '../../components/Bill/CancellationSchedule';
+import CompletionSchedule from '../../components/Bill/CompletionSchedule';
+import Evaluated from '../../components/Bill/Evaluated';
 interface MenuTab {
   name: string;
   background: string;
@@ -32,9 +41,128 @@ const Bill = () => {
   const searchHandler = () => {
     console.log("searchHandler");
   };
+  const [isFavorited, setIsFavorited] = React.useState(true);
+  const iconName = isFavorited ? 'cards-heart' : 'cards-heart-outline';
+  // const navigation = useNavigation();
+  const searchHandlerClick = (text: string) => {
 
+  }
+  // const searchHandlerOnPress = () => {
+  //   navigation.navigate('WeddingDressSearch' as never);
+  // }
+  const ratingCompleted = (rating: number) => {
+    console.log('Rating is: ' + rating);
+  };
+  const heartIconHandlerClick = () => {
+
+  }
+  const onToggleFavorite = () => {
+    setIsFavorited(prev => !prev);
+  }
+  const dataFavorites = [
+    {
+      id: 1,
+      image: require('../../assets/images/temp/5.png'),
+      name: "Váy lễ luxury-LT511",
+      vote: "5/5",
+      rentalQuantity: "100",
+      listedPrice: "50.000.000 Đ",
+      percent: "25%",
+      discount: "37.500.000 Đ"
+    },
+    {
+      id: 2,
+      image: require('../../assets/images/temp/5.png'),
+      name: "Váy lễ luxury-LT511",
+      vote: "5/5",
+      rentalQuantity: "100",
+      listedPrice: "50.000.000 Đ",
+      percent: "25%",
+      discount: "37.500.000 Đ"
+    },
+    {
+      id: 3,
+      image: require('../../assets/images/temp/5.png'),
+      name: "Váy lễ luxury-LT511",
+      vote: "5/5",
+      rentalQuantity: "100",
+      listedPrice: "50.000.000 Đ",
+      percent: "25%",
+      discount: "37.500.000 Đ"
+    },
+    {
+      id: 4,
+      image: require('../../assets/images/temp/5.png'),
+      name: "Váy lễ luxury-LT511",
+      vote: "5/5",
+      rentalQuantity: "100",
+      listedPrice: "50.000.000 Đ",
+      percent: "25%",
+      discount: "37.500.000 Đ"
+    },
+    {
+      id: 5,
+      image: require('../../assets/images/temp/5.png'),
+      name: "Váy lễ luxury-LT511",
+      vote: "5/5",
+      rentalQuantity: "100",
+      listedPrice: "50.000.000 Đ",
+      percent: "25%",
+      discount: "37.500.000 Đ"
+    },
+    {
+      id: 6,
+      image: require('../../assets/images/temp/5.png'),
+      name: "Váy lễ luxury-LT511",
+      vote: "5/5",
+      rentalQuantity: "100",
+      listedPrice: "50.000.000 Đ",
+      percent: "25%",
+      discount: "37.500.000 Đ"
+    },
+    {
+      id: 7,
+      image: require('../../assets/images/temp/5.png'),
+      name: "Váy lễ luxury-LT511",
+      vote: "5/5",
+      rentalQuantity: "100",
+      listedPrice: "50.000.000 Đ",
+      percent: "25%",
+      discount: "37.500.000 Đ"
+    },
+    {
+      id: 8,
+      image: require('../../assets/images/temp/5.png'),
+      name: "Váy lễ luxury-LT511",
+      vote: "5/5",
+      rentalQuantity: "100",
+      listedPrice: "50.000.000 Đ",
+      percent: "25%",
+      discount: "37.500.000 Đ"
+    },
+    {
+      id: 9,
+      image: require('../../assets/images/temp/5.png'),
+      name: "Váy lễ luxury-LT511",
+      vote: "5/5",
+      rentalQuantity: "100",
+      listedPrice: "50.000.000 Đ",
+      percent: "25%",
+      discount: "37.500.000 Đ"
+    },
+    {
+      id: 10,
+      image: require('../../assets/images/temp/5.png'),
+      name: "Váy lễ luxury-LT511",
+      vote: "5/5",
+      rentalQuantity: "100",
+      listedPrice: "50.000.000 Đ",
+      percent: "25%",
+      discount: "37.500.000 Đ"
+    },
+  ]
   return (
-    <SafeAreaView style={{ flex: 1 }}>
+    <SafeAreaView style={{ flex: 1 , backgroundColor : COLORS.White }}>
       <Search searchHandler={searchHandler} props={{}} />
 
       <View>
@@ -65,43 +193,24 @@ const Bill = () => {
         />
       </View>
 
-      <View style={{ flex: 1 }} >
+      <View style={{ flex: 1  }} >
           {
             menuTabs[tabIndexActive].name === "Lịch Đặt" ? (
-              <View style={{ backgroundColor: menuTabs[tabIndexActive].background, flex: 1, alignItems: 'center', justifyContent: 'center' }} >
-                {/* Content for "Lịch Đặt" tab */}
-                <Text style={{
-                  fontSize: SPACING.space_32,
-                  fontFamily: FONTFAMILY.Roboto_Medium,
-                  color: 'white'
-                }} >{menuTabs[tabIndexActive].name}</Text>
+              <View style={{ backgroundColor: COLORS.White, flex: 1, alignItems: 'center', justifyContent: 'center' }}  >
+               <BookingSchedule/>
               </View>
             ) : menuTabs[tabIndexActive].name === "Lịch hủy" ? (
-              <View style={{ backgroundColor: menuTabs[tabIndexActive].background, flex: 1, alignItems: 'center', justifyContent: 'center' }}  >
-                {/* Content for "Lịch hủy" tab */}
-                <Text style={{
-                  fontSize: SPACING.space_32,
-                  fontFamily: FONTFAMILY.Roboto_Medium,
-                  color: 'white'
-                }} >{menuTabs[tabIndexActive].name}</Text>
+              <View style={{ backgroundColor: COLORS.White, flex: 1, alignItems: 'center', justifyContent: 'center' }}  >
+                <CancellationSchedule/>
               </View>
             ) : menuTabs[tabIndexActive].name === "Hoàn thành" ? (
-              <View style={{ backgroundColor: menuTabs[tabIndexActive].background, flex: 1, alignItems: 'center', justifyContent: 'center' }}  >
-                {/* Content for "Hoàn thành" tab */}
-                <Text style={{
-                  fontSize: SPACING.space_32,
-                  fontFamily: FONTFAMILY.Roboto_Medium,
-                  color: 'white'
-                }} >{menuTabs[tabIndexActive].name}</Text>
+              <View style={{ backgroundColor: COLORS.White, flex: 1, alignItems: 'center', justifyContent: 'center' }}  >
+                
+               <CompletionSchedule/>
               </View>
             ) : menuTabs[tabIndexActive].name === "Đã Đánh giá" ? (
-              <View style={{ backgroundColor: menuTabs[tabIndexActive].background, flex: 1, alignItems: 'center', justifyContent: 'center' }}  >
-                {/* Content for "Đã Đánh giá" tab */}
-                <Text style={{
-                  fontSize: SPACING.space_32,
-                  fontFamily: FONTFAMILY.Roboto_Medium,
-                  color: 'white'
-                }} >{menuTabs[tabIndexActive].name}</Text>
+              <View style={{ backgroundColor: COLORS.White, flex: 1, alignItems: 'center', justifyContent: 'center' }}  >
+               <Evaluated/>
               </View>
             ) : null
           }
