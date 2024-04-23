@@ -1,5 +1,5 @@
 import React from 'react';
-import { View, StyleSheet, ScrollView, TouchableOpacity, Text, Image } from 'react-native';
+import { View, StyleSheet, ScrollView, TouchableOpacity, Text, Image, SafeAreaView } from 'react-native';
 import { BillDetailsStyles } from './BillDetails.style';
 import Icon from 'react-native-vector-icons/MaterialCommunityIcons'
 import IconSetting from 'react-native-vector-icons/AntDesign'
@@ -11,7 +11,7 @@ const BillDetails = () => {
     const navigation = useNavigation();
 
     return (
-        <View style={BillDetailsStyles.container}>
+        <SafeAreaView style={BillDetailsStyles.container}>
             <ScrollView>
                 <View style={BillDetailsStyles.header}>
                     <View style={BillDetailsStyles.nav}>
@@ -92,7 +92,7 @@ const BillDetails = () => {
                 </View>
 
             </ScrollView>
-        </View>
+        </SafeAreaView>
     );
 }
 
