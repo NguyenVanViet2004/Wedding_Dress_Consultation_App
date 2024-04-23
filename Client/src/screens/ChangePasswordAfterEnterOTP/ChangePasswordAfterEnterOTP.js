@@ -1,4 +1,4 @@
-import { View, Text, ScrollView, TouchableOpacity, TextInput } from 'react-native'
+import { View, Text, ScrollView, TouchableOpacity, TextInput, SafeAreaView } from 'react-native'
 import React from 'react'
 import Icon from 'react-native-vector-icons/MaterialCommunityIcons'
 import { COLORS, SPACING } from '../../theme/Theme'
@@ -17,7 +17,7 @@ const ChangePasswordAfterEnterOTP = () => {
     );
   }
   return (
-    <View style ={ChangePasswordAfterEnterOTPStyles.container}>
+    <SafeAreaView style ={ChangePasswordAfterEnterOTPStyles.container}>
       <ScrollView>
         <View style= {ChangePasswordAfterEnterOTPStyles.header}>
           <TouchableOpacity onPress={() => navigation.goBack()}>
@@ -44,7 +44,7 @@ const ChangePasswordAfterEnterOTP = () => {
           <Text style ={ChangePasswordAfterEnterOTPStyles.footerTitle}>Cập nhập mật khẩu</Text>
         </TouchableOpacity>
       </ScrollView>
-    </View>
+    </SafeAreaView>
   )
 }
 

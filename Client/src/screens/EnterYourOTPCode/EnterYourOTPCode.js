@@ -6,6 +6,7 @@ import Ionicons from 'react-native-vector-icons/Ionicons'
 import { EnterYourOTPCodeStyles } from './EnterYourOTPCode.style'
 import { COLORS, SPACING } from '../../theme/Theme'
 import { useNavigation } from '@react-navigation/native';
+import { SafeAreaView } from 'react-native'
 
 
 const EnterYourOTPCode = () => {
@@ -24,7 +25,7 @@ const EnterYourOTPCode = () => {
 
 
   return (
-    <View style={EnterYourOTPCodeStyles.container}>
+    <SafeAreaView style={EnterYourOTPCodeStyles.container}>
       <ScrollView>
         <View style={EnterYourOTPCodeStyles.header}>
           <TouchableOpacity onPress={() => navigation.goBack()}>
@@ -84,7 +85,7 @@ const EnterYourOTPCode = () => {
           </View>
         </View>
       </ScrollView>
-    </View>
+    </SafeAreaView>
   )
 }
 
