@@ -1,4 +1,4 @@
-import { View, Text, ScrollView, TouchableOpacity, TextInput } from 'react-native'
+import { View, Text, ScrollView, TouchableOpacity, TextInput, SafeAreaView } from 'react-native'
 import React from 'react'
 import { ForgotPasswordStyles } from './ForgotPassword.style'
 import Icon from 'react-native-vector-icons/MaterialCommunityIcons'
@@ -14,7 +14,7 @@ const ForgotPassword = () => {
   }
 
   return (
-    <View style ={ForgotPasswordStyles.container}>
+    <SafeAreaView style ={ForgotPasswordStyles.container}>
       <ScrollView>
         <View style= {ForgotPasswordStyles.header}>
           <TouchableOpacity onPress={() => navigation.goBack()}>
@@ -37,7 +37,7 @@ const ForgotPassword = () => {
           <Text style ={ForgotPasswordStyles.footerTitle}>Xác nhận</Text>
         </TouchableOpacity>
       </ScrollView>
-    </View>
+    </SafeAreaView>
   )
 }
 

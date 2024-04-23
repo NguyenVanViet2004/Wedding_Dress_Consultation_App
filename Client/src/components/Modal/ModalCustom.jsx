@@ -1,6 +1,6 @@
 import React from 'react';
 import { View, StyleSheet, Modal, TouchableOpacity, Text } from 'react-native';
-import { BORDERRADIUS, COLORS, FONTSIZE, SPACING } from '../../theme/Theme';
+import { BORDERRADIUS, COLORS, FONTFAMILY, FONTSIZE, SPACING } from '../../theme/Theme';
 import Icon from 'react-native-vector-icons/MaterialCommunityIcons'
 
 
@@ -18,10 +18,10 @@ const ModalCustom = ({ isVisible, children, onSubmid,onCancel }) => {
                     {children}
                     <View style ={styles.item}>
                         <TouchableOpacity onPress={onCancel} style={styles.btn_cancel}>
-                            <Text style={styles.btn_title}>Cancel</Text>
+                            <Text style={[styles.btn_title,{color:COLORS.LightOrange}]}>Cancel</Text>
                         </TouchableOpacity>
                         <TouchableOpacity onPress={onSubmid} style={styles.btn_submid}>
-                            <Text style={styles.btn_title}>Submid</Text>
+                            <Text style={styles.btn_title}>Log out</Text>
                         </TouchableOpacity>
                     </View>
                 </View>
@@ -53,10 +53,12 @@ const styles = StyleSheet.create({
         marginTop: 20, 
         width: SPACING.space_32 * 3.9, 
         height: SPACING.space_32 + SPACING.space_12, 
-        backgroundColor: '#FDDAB1', 
+        backgroundColor: COLORS.White, 
         justifyContent: 'center', 
         alignItems: 'center', 
-        borderRadius: BORDERRADIUS.radius_10
+        borderRadius: BORDERRADIUS.radius_10,
+        borderWidth: SPACING.space_2-1,
+        borderColor: "#ACACAC"
     },
     btn_submid:{
         marginTop: SPACING.space_20 ,
@@ -69,7 +71,8 @@ const styles = StyleSheet.create({
     },
     btn_title:{
         color: COLORS.White, 
-        fontSize: FONTSIZE.size_16
+        fontSize: FONTSIZE.size_18 - 1,
+        fontFamily: FONTFAMILY.Roboto_Medium
     }
 
 })

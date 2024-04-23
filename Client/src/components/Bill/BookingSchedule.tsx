@@ -1,11 +1,14 @@
-import { FlatList, Image, Platform, StyleSheet, Text, View } from 'react-native'
+import { FlatList, Image, Platform, StyleSheet, Text, TouchableOpacity, View } from 'react-native'
 import React from 'react'
 import { COLORS, FONTFAMILY, FONTSIZE, SPACING } from '../../theme/Theme'
 import Icon from 'react-native-vector-icons/Fontisto';
 import Icons from 'react-native-vector-icons/MaterialCommunityIcons';
 
 import { Rating, AirbnbRating } from 'react-native-ratings';
+import { useNavigation } from '@react-navigation/native';
 const BookingSchedule = () => {
+    const navigation = useNavigation();
+
     const ratingCompleted = (rating: number) => {
         console.log('Rating is: ' + rating);
       };
@@ -111,6 +114,12 @@ const BookingSchedule = () => {
           discount: "37.500.000 Đ"
         },
       ]
+
+
+     const billdetails = (data: any) => {
+        navigation.navigate("BillDetails", [data] )
+
+     } 
   return (
     <View>
        <FlatList
@@ -152,7 +161,9 @@ const BookingSchedule = () => {
                 onPress={() => onToggleFavorite()}
                 style={{ color: COLORS.Red }}
               /> */}
-              <Text style={{color : COLORS.LightOrange , fontSize: FONTSIZE.size_12 , marginTop : 60 }}>Xem chi tiết {'>>'}</Text>
+              <TouchableOpacity onPress={() =>billdetails(item)}>
+                <Text  style={{color : COLORS.LightOrange , fontSize: FONTSIZE.size_12 , marginTop : 60 }}>Xem chi tiết {'>>'}</Text>
+              </TouchableOpacity>
             
             </View>
            
